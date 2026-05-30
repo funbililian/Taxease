@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Type - Taxease</title>
+
+    <link rel="stylesheet" href="profile-type.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+
+        <button class="back-btn" onclick="goBack()">
+            &#8592;
+        </button>
+
+        <div>
+            <h1>Create Profile</h1>
+            <p>Select the option that describes you :</p>
+        </div>
+
+    </div>
+
+    <!-- Freelancer Profile -->
+    <div class="profile-card">
+
+        <img
+            src="https://res.cloudinary.com/dmtbsxz67/image/upload/v1780149188/freelancers-nigeria_zu6wn8.webp"
+            alt=" Profile"
+        >
+
+        <div class="overlay">
+
+            <h2>Freelancer</h2>
+
+            <button
+                class="select-btn"
+                onclick="selectProfile('Individual')"
+            >
+                Select
+            </button>
+
+        </div>
+
+    </div>
+
+     <!-- Employee Profile -->
+    <div class="profile-card">
+
+        <img
+            src="https://res.cloudinary.com/dmtbsxz67/image/upload/v1780149393/0x0_td93hs.webp"
+            alt=" Profile"
+        >
+
+        <div class="overlay">
+
+            <h2>Employee</h2>
+
+            <button
+                class="select-btn"
+                onclick="selectProfile('Individual')"
+            >
+                Select
+            </button>
+
+        </div>
+
+    </div>
+  
+    <!-- Business Profile -->
+    <div class="profile-card">
+
+        <img
+            src="https://res.cloudinary.com/dmtbsxz67/image/upload/v1780149393/human-resources-portrait-black-man-600nw-2723721801_ie8p6l.webp"
+            alt="Business Profile"
+        >
+
+        <div class="overlay">
+
+            <h2>HR/Payroll Officer</h2>
+
+            <button
+                class="select-btn"
+                onclick="selectProfile('Business')"
+            >
+                Select
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="profile-type.js"></script>
+
+</body>
+</html>
