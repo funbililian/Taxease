@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Taxease</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+
+  <nav>
+
+    <div class="container nav-wrapper">
+
+      <div class="logo-area">
+
+        <!-- MAIN LOGO -->
+        <div class="logo">
+          <img src="https://res.cloudinary.com/dmtbsxz67/image/upload/v1780010677/Screenshot_20260528_235724_Figma_zqpyn9.jpg" alt="Taxease Logo">
+          <span>Taxease</span>
+        </div>
+
+      <!-- NAV LINKS -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#userguide">User guide </a></li>
+        <li><a href="#aboutus">About Us</a></li>
+        <li><a href="#calculator">Calculator</a></li>
+  <li><a    href="#profile">Profile</a></li>
+   <li><a          href="#faq">FAQ</a></li>
+        <li><a
+               href="#signin">Sign in</a></li>
+      </ul>
+
+      <!-- MOBILE MENU -->
+      <div class="menu-toggle" id="menuToggle">
+        ☰
+      </div>
+
+    </div>
+
+  </nav>
+
+  <!-- ================= HERO ================= -->
+
+  <section class="hero" id="home">
+
+    <div class="container hero-wrapper">
+
+      <!-- LEFT -->
+      <div class="hero-content">
+
+        <h1>
+          Calculate Your
+          <span>Taxes</span>
+          Easily!
+        </h1>
+
+        <p>
+          Smart and seamless tax calculation platform designed to help
+          individuals and businesses estimate, learn, and pay taxes securely.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#" class="btn">Get Started</a>
+          <a href="#" class="btn btn-outline">Learn More</a>
+        </div>
+
+      </div>
+
+      <div class="hero-slider">
+
+        <div class="slider-track">
+
+          <div class="slide">
+            <img src="https://res.cloudinary.com/dmtbsxz67/image/upload/v1780010946/Screenshot_20260529_002752_Figma_acchfe.jpg" alt="">
+          </div>
+
+          <div class="slide">
+            <img src="https://res.cloudinary.com/dmtbsxz67/image/upload/v1780010946/Screenshot_20260529_002811_Figma_th8bi7.jpg" alt="">
+          </div>
+
+          <div class="slide">
+            <img src="https://res.cloudinary.com/dmtbsxz67/image/upload/v1780010946/Screenshot_20260529_002840_Figma_r2zotk.jpg" alt="">
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= FEATURES ================= -->
+
+  <section class="features" id="features">
+
+    <div class="container">
+
+    <div class="hero-slider">
+
+      <div class="slider-track">
+
+        <!-- IMAGE 1 -->
+        <div class="slide">
+          <img src="https://res-console.cloudinary.com/dmtbsxz67/thumbnails/v1/image/upload/v1780010946/U2NyZWVuc2hvdF8yMDI2MDUyOV8wMDI3NTJfRmlnbWFfYWNjaGZl/preview" alt="Taxease App Screen 1">
+        </div>
+
+        <!-- IMAGE 2 -->
+        <div class="slide">
+          <img src="https://res-console.cloudinary.com/dmtbsxz67/thumbnails/v1/image/upload/v1780010946/U2NyZWVuc2hvdF8yMDI2MDUyOV8wMDI4MTFfRmlnbWFfdGg4Ymk3/preview" alt="Taxease App Screen 2">
+        </div>
+
+        <!-- IMAGE 3 -->
+        <div class="slide">
+          <img src="https://res-console.cloudinary.com/dmtbsxz67/thumbnails/v1/image/upload/v1780010946/U2NyZWVuc2hvdF8yMDI2MDUyOV8wMDI4NDBfRmlnbWFfcjJ6b3Rr/preview" alt="Taxease App Screen 3">
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+    </section>
+      <div class="section-title">
+        <h2>Why Choose Taxease?</h2>
+        <p>
+          Built for accessibility, simplicity, and secure tax processing.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">🧮</div>
+          <h3>Smart Calculator</h3>
+          <p>
+            Instantly estimate personal and business taxes.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📘</div>
+          <h3>Tax Education</h3>
+          <p>
+            Learn tax laws and payment processes with easy guides.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>Secure Payments</h3>
+          <p>
+            Fast and protected tax payment system.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= CTA ================= -->
+
+  <section class="cta">
+
+    <div class="container">
+
+      <div class="cta-box">
+
+        <h2>Start Calculating Taxes Smarter</h2>
+
+        <p>
+          Join thousands simplifying their tax calculations and payments.
+        </p>
+
+        <a href="#" class="btn">Get Started Now</a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer id="contact">
+    <div class="container">
+      © 2026 Taxease. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Email Verification</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="verification.css">
+
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- =========================
+  VERIFICATION SECTION
+  ========================= -->
+
+  <section class="verification-section">
+
+    <div class="verification-container">
+
+      <!-- LEFT SIDE -->
+
+      <div class="verification-left">
+
+        <div class="logo-area">
+
+          <img
+            src="https://res.cloudinary.com/dmtbsxz67/image/upload/v1780010677/Screenshot_20260528_235724_Figma_zqpyn9.jpg"
+            alt="Logo"
+          >
+
+          <h1>Taxease</h1>
+
+        </div>
+
+        <h2>
+          Verify Your Email
+        </h2>
+
+        <p>
+          We sent a verification code to your email address.
+          Enter the code below to continue securely.
+        </p>
+
+      </div>
+
+      <!-- RIGHT SIDE -->
+
+      <div class="verification-right">
+
+        <form>
+
+          <h2>Email Verification</h2>
+
+          <!-- EMAIL -->
+
+          <div class="input-group">
+
+            <label>Email Address</label>
+
+            <input
+              type="email"
+              placeholder="Enter your email"
+            >
+
+          </div>
+
+          <!-- SEND BUTTON -->
+
+          <button
+            type="button"
+            class="send-btn"
+          >
+            Send Verification Code
+          </button>
+
+          <!-- CODE INPUT -->
+
+          <div class="input-group">
+
+            <label>Verification Code</label>
+
+            <input
+              type="text"
+              placeholder="Enter 6-digit code"
+            >
+
+          </div>
+
+          <!-- VERIFY BUTTON -->
+
+          <button
+            type="submit"
+            class="verify-btn"
+          >
+            Verify Email
+          </button>
+
+          <!-- RESEND -->
+
+          <p class="resend-text">
+
+            Didn't receive the code?
+
+            <a href="#">
+              Resend
+            </a>
+
+          </p>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</body>
+
+</html>

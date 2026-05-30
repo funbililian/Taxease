@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Taxease Log-in</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="register.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <section class="log-in-section">
+
+    <div class="log-in-container">
+
+      <div class="log-in-left">
+
+        <div class="logo-area">
+
+          <img src="https://res.cloudinary.com/dmtbsxz67/image/upload/v1780010677/Screenshot_20260528_235724_Figma_zqpyn9.jpg" alt="Logo">
+
+          <h1>Taxease</h1>
+
+        </div>
+
+        <h2>Log In</h2>
+
+        <p>
+          Finance and tax management simplified.
+        </p>
+
+      </div>
+ <div class="log-in-right">
+
+        <form id="Log-inForm">
+
+          <h2>Log In</h2>
+ <div class="input-group">
+  <label>Email Address</label>
+ <input
+              type="email"
+              id="email"
+              placeholder="Enter your email" >
+
+          </div>
+ <div class="input-group">
+
+            <label>Password</label>
+
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter password"
+            >
+
+          </div>
+ <div class="remember-container">
+  <label>
+    <input type="checkbox" checked>
+    Remember Me
+  </label>
+
+  <a href="#">Forgot Password?</a>
+</div>
+  <div> <button type="submit" class="Login-btn">
+           Login
+          </button>
+
+          <p class="signup-text">
+  Don't have an account?
+  <a href="signup.html">Sign Up</a>
+</p>
+<div class="divider">
+
+  <span>OR</span>
+
+</div>
+<button
+  type="button"
+  class="google-btn"
+>
+
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg?utm_source=chatgpt.com"
+    alt="Google Logo"
+  >
+
+  Login using Google
+
+          </button>
+
+        </form>
+ </div>
+
+      </div>
+
+  </section>
+
+  <script src="log-in.js"></script>
+
+</body>
+
+</html>
