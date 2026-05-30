@@ -1,6 +1,8 @@
 # Taxease
 Capstone project 
 
+LP to VE Landing page to Verify Email
+
 Taxease-Landing-Page/
 │
 ├── index.html
@@ -41,3 +43,31 @@ Taxease-Verify-email-Page/
 |
 ├── images/
 │   ├──https://res.cloudinary.com/dmtbsxz67/image/upload/v1780010677/Screenshot_20260528_235724_Figma_zqpyn9.jpg
+
+
+Profile
+
+Taxease-Profile-Page/
+│
+├── index.html
+├── style.css
+├── script.js
+|
+├── images/
+│   ├──https://res.cloudinary.com/dmtbsxz67/image/upload/v1780149393/0x0_td93hs.webp"
+|
+├──https://res.cloudinary.com/dmtbsxz67/image/upload/v1780149393/human-resources-portrait-black-man-600nw-2723721801_ie8p6l.webp" 
+|
+├── https://res.cloudinary.com/dmtbsxz67/image/upload/v1780149188/freelancers-nigeria_zu6wn8.webp"
+
+Taxease-Details-Page/
+│
+├── index.html
+├── style.css
+├── script.js
+
+Taxease-Details-Page/
+│
+├── index.html
+├── style.css
+├── script.js
