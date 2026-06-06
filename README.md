@@ -1,4 +1,4 @@
-# Taxease
+# TaxEase
 Capstone project 
 
 LP to VE Landing page to Verify Email
