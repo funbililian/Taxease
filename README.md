@@ -129,17 +129,5 @@ Project Structure
     - Calculator
     - Payments
     - Profile
-  - services/
-    - taxService.js
-    - authService.js
-    - paymentService.js
-  - utils/
-    - taxUtils.js
-    - validation.js
-- /data
-  - sample-employees.csv
-- /docs
-  - requirements.md
-- package.json
 - README.md
 
