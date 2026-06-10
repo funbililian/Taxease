@@ -75,11 +75,8 @@ makePaymentBtn.addEventListener(
 // PAYE TAX BANDS
 // ===================================
 
-function calculatePAYE(
-    taxableIncome
-){
-
-    let tax = 0;
+function calculatePAYE(taxableIncome) {
+  let tax = 0;
 
     let remaining =
     taxableIncome;
