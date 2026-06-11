@@ -105,6 +105,7 @@ async function calculateTax() {
 
     if (!res.ok) {
       throw new Error(data.message || "Calculation failed");
+      
     }
 
     renderResults(data.data);

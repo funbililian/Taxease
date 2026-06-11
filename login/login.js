@@ -1,7 +1,7 @@
-const loginForm = document.getElementById("Log-inForm");
+const loginForm = document.getElementById("loginForm");
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
-const rememberMe = document.getElementById("rememberMe");
+const rememberMe = document.getElementById("remember");
 
 // Load saved email when page opens
 window.addEventListener("load", () => {
@@ -9,7 +9,7 @@ window.addEventListener("load", () => {
 
   if (savedEmail) {
     emailInput.value = savedEmail;
-    rememberMe.checked = true;
+    remember.checked = true;
   }
 });
 
@@ -34,7 +34,7 @@ loginForm.addEventListener("submit", async function (event) {
   }
 
   // Remember Me
-  if (rememberMe.checked) {
+  if (remember.checked) {
     localStorage.setItem("savedEmail", email);
   } else {
     localStorage.removeItem("savedEmail");
