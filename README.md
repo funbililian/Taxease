@@ -109,25 +109,3 @@ Project Goals
 
 Project Structure
 
-- /public
-  - index.html
-  - favicon.ico
-  - assets/
-    - css/
-    - js/
-    - images/
-- /src
-  - components/
-    - Auth/
-    - Dashboard/
-    - TaxCalculator/
-    - Reports/
-  - pages/
-    - Login
-    - Register
-    - Dashboard
-    - Calculator
-    - Payments
-    - Profile
-- README.md
-
