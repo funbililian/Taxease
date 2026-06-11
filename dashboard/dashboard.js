@@ -55,7 +55,7 @@ async function loadUserProfile() {
 
 async function loadTaxHistory() {
     try {
-        const res = await fetch(`${API_BASE}/payroll/uploads`, {
+        const res = await fetch(`${API_BASE}/tax/history`, {
             method: "GET",
             credentials: "include"
         });
@@ -207,32 +207,91 @@ document.querySelector(".pdf-btn").addEventListener("click", async () => {
 });
 
 // =============================
-// EXPORT BUTTON (CSV or TXT fallback)
+// EXPORT PAYROLL REPORT (CSV)
 // =============================
 
-document.querySelector(".export-btn").addEventListener("click", () => {
+document.querySelector(".export-btn").addEventListener(
+    "click",
+    async () => {
 
-    const report = `
-TAX REPORT
+        try {
 
-Name: ${user.name}
-Email: ${user.email}
-TIN: ${user.tin}
+            const batchJobId =
+            localStorage.getItem(
+                "batchJobId"
+            );
 
-Income: ₦${user.grossIncome}
-Tax: ₦${user.payeTax}
-Net: ₦${user.netIncome}
-`;
+            if (!batchJobId) {
 
-    const blob = new Blob([report], { type: "text/plain" });
+                alert(
+                    "No payroll batch found. Please upload and process payroll first."
+                );
 
-    const link = document.createElement("a");
+                return;
+            }
 
-    link.href = URL.createObjectURL(blob);
-    link.download = "tax_report.txt";
+            const response =
+            await fetch(
+                `${API_BASE}/reports/payroll/csv`,
+                {
+                    method: "POST",
 
-    link.click();
-});
+                    credentials: "include",
+
+                    headers: {
+                        "Content-Type":
+                        "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        batchJobId
+                    })
+                }
+            );
+
+            const data =
+            await response.json();
+
+            if (!response.ok) {
+
+                throw new Error(
+                    data.message ||
+                    "Failed to generate report"
+                );
+
+            }
+
+            if (!data.reportId) {
+
+                throw new Error(
+                    "No report ID returned from server"
+                );
+
+            }
+
+            // Download generated report
+
+            window.location.href =
+            `${API_BASE}/reports/${data.reportId}/download`;
+
+        }
+
+        catch (error) {
+
+            console.error(
+                "Export Error:",
+                error
+            );
+
+            alert(
+                error.message ||
+                "Unable to export report"
+            );
+
+        }
+
+    }
+);
 
 // =============================
 // INIT DASHBOARD
