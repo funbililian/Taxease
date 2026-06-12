@@ -145,18 +145,10 @@ TaxEase/
 │   ├── forgotpassword.css
 │   └── forgotpassword.js
 │
-├── history/
-│   ├── history.html
-│   ├── history.css
-│   └── history.js
-│
 ├── login/
 │   ├── login.html
 │   ├── login.css
 │   └── login.js
-│
-├── payment/
-│   └── payment.html
 │
 ├── payroll/
 │   ├── payroll.html
