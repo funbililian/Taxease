@@ -7,98 +7,83 @@
 
   <title>Taxease Log-in</title>
 
-  <!-- CSS -->
   <link rel="stylesheet" href="login.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <section class="log-in-section">
+<section class="log-in-section">
 
-    <div class="log-in-container">
+  <div class="log-in-container">
 
-      <div class="log-in-left">
+    <!-- LEFT SIDE -->
+    <div class="log-in-left">
 
-        <div class="logo-area">
+      <div class="logo-area">
+        <img src="https://res.cloudinary.com/dmtbsxz67/image/upload/v1780010677/Screenshot_20260528_235724_Figma_zqpyn9.jpg" alt="Logo">
+        <h1>Taxease</h1>
+      </div>
 
-          <img src="https://res.cloudinary.com/dmtbsxz67/image/upload/v1780010677/Screenshot_20260528_235724_Figma_zqpyn9.jpg" alt="Logo">
+      <h2>Log In</h2>
+      <p>Finance and tax management simplified.</p>
 
-          <h1>Taxease</h1>
+    </div>
 
-        </div>
+    <!-- RIGHT SIDE -->
+    <div class="log-in-right">
+
+      <form id="loginForm">
 
         <h2>Log In</h2>
 
-        <p>
-          Finance and tax management simplified.
+        <div class="input-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="Enter your email">
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter password">
+        </div>
+
+        <div class="remember-container">
+          <label>
+            <input type="checkbox" id="remember">
+            Remember Me
+          </label>
+
+          <a href="../forgotpassword/index.html">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="login-btn">
+          Login
+        </button>
+
+        <p class="signup-text">
+          Don't have an account?
+          <a href="../signin/index.html">Sign Up</a>
         </p>
 
-      </div>
- <div class="log-in-right">
+        <div class="divider">
+          <span>OR</span>
+        </div>
 
-        <form id="loginForm">
+        <div id="google-signin-button"></div>
 
-          <h2>Log In</h2>
- <div class="input-group">
-  <label>Email Address</label>
- <input
-              type="email"
-              id="email"
-              placeholder="Enter your email" >
+      </form>
 
-          </div>
- <div class="input-group">
+    </div>
 
-            <label>Password</label>
+  </div>
 
-            <input
-              type="password"
-              id="password"
-              placeholder="Enter password"
-            >
+</section>
 
-          </div>
- <div class="remember-container">
-  <label>
-    <input type="checkbox" checked>
-    Remember Me
-  </label>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
 
-  <a href="../forgotpassword/index.html">Forgot Password?</a>
-</div>
-  <div>
-     <button type="submit" class="login-btn">
-           Login
-          </button>
-
-          <p class="signup-text">
-  Don't have an account?
-  <a href="../signin/index.html">Sign Up</a>
-</p>
-<div class="divider">
-
-  <span>OR</span>
-
-</div>
-    
-  <!-- GOOGLE SIGN-IN SCRIPT -->
-
-  <script
-    src="https://accounts.google.com/gsi/client"
-    async
-    defer
-  ></script>
-  
- </div>
-
-      </div>
-
-  </section>
-
-  <script src="login.js"></script>
+<script src="login.js"></script>
 
 </body>
-
 </html>
