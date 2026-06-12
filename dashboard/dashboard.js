@@ -14,7 +14,7 @@ let user = null;
 
 async function loadUserProfile() {
     try {
-        const res = await fetch(`${API_BASE}/auth/me`, {
+        const res = await fetch(`${API_BASE}/auth/get_profile`, {
             method: "GET",
             credentials: "include"
         });
