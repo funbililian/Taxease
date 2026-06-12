@@ -1,25 +1,59 @@
+/* =========================
+LOGIN FORM ELEMENTS
+========================= */
+
 const loginForm = document.getElementById("loginForm");
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
 const rememberMe = document.getElementById("remember");
 
-// Load saved email when page opens
+/* =========================
+ON PAGE LOAD
+========================= */
+
 window.addEventListener("load", () => {
+  // Load saved email
   const savedEmail = localStorage.getItem("savedEmail");
 
   if (savedEmail) {
     emailInput.value = savedEmail;
-    remember.checked = true;
+    rememberMe.checked = true;
+  }
+
+  // Initialize Google Sign-In
+  if (
+    typeof google !== "undefined" &&
+    document.getElementById("google-signin-button")
+  ) {
+    google.accounts.id.initialize({
+      client_id: "YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com",
+      callback: handleGoogleResponse,
+    });
+
+    google.accounts.id.renderButton(
+      document.getElementById("google-signin-button"),
+      {
+        theme: "outline",
+        size: "large",
+        text: "continue_with",
+        shape: "rectangular",
+        width: "300",
+      }
+    );
   }
 });
 
-loginForm.addEventListener("submit", async function (event) {
+/* =========================
+LOGIN FORM SUBMIT
+========================= */
+
+loginForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   const email = emailInput.value.trim();
   const password = passwordInput.value.trim();
 
-  // Check empty fields
+  // Validate empty fields
   if (!email || !password) {
     alert("Please fill in all fields.");
     return;
@@ -33,8 +67,8 @@ loginForm.addEventListener("submit", async function (event) {
     return;
   }
 
-  // Remember Me
-  if (remember.checked) {
+  // Remember me logic
+  if (rememberMe.checked) {
     localStorage.setItem("savedEmail", email);
   } else {
     localStorage.removeItem("savedEmail");
@@ -49,31 +83,57 @@ loginForm.addEventListener("submit", async function (event) {
           "Content-Type": "application/json",
         },
         credentials: "include",
-        body: JSON.stringify({
-          email,
-          password,
-        }),
-      },
+        body: JSON.stringify({ email, password }),
+      }
     );
 
     const data = await response.json();
 
     if (response.ok && data.success) {
-      // Save user data locally
       localStorage.setItem("currentUser", JSON.stringify(data.data));
 
       alert("Login successful!");
 
-      // Redirect to dashboard
-      window.location.href = "/dashboard/index.html";
+      window.location.href = "../dashboard/index.html";
     } else {
       alert(data.message || "Invalid email or password.");
     }
   } catch (error) {
     console.error("Login Error:", error);
 
-    alert(
-      "Unable to connect to the server. Please check your internet connection and try again.",
-    );
+    alert("Unable to connect to the server. Please try again.");
   }
 });
+
+/* =========================
+GOOGLE LOGIN CALLBACK
+========================= */
+
+function handleGoogleResponse(response) {
+  console.log("Google Login Success:", response);
+
+  fetch("https://tax-system-backend.onrender.com/api/auth/google", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    credentials: "include",
+    body: JSON.stringify({
+      credential: response.credential,
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.success) {
+        localStorage.setItem("currentUser", JSON.stringify(data.data));
+
+        window.location.href = "/dashboard/index.html";
+      } else {
+        alert(data.message || "Google login failed.");
+      }
+    })
+    .catch((error) => {
+      console.error("Google Login Error:", error);
+      alert("Google login failed.");
+    });
+}
