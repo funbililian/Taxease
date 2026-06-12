@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (faqBtn) {
     faqBtn.addEventListener("click", function () {
-      window.location.href = "faq/index.html";
+      window.location.href = "../faq/index.html";
     });
   }
 });
