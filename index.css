@@ -80,7 +80,6 @@ nav {
   font-size: 30px;
   cursor: pointer;
   line-height: 1;
-  margin-left: auto
 }
 
 .btn {
@@ -282,6 +281,7 @@ footer {
   /* Show hamburger menu */
   .menu-toggle {
     display: block;
+    align-items: right
   }
 
   /* Hide menu by default */
