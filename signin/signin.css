@@ -8,13 +8,14 @@ GLOBAL STYLES
   box-sizing: border-box;
 }
 
-body {
+html, body {
   font-family: "Poppins", sans-serif;
   background: #f5f7fa;
+  overflow-x: hidden;
 }
 
 /* =========================
-REGISTER SECTION
+PAGE WRAPPER
 ========================= */
 
 .register-section {
@@ -26,11 +27,15 @@ REGISTER SECTION
   padding: 40px 20px;
 }
 
+/* =========================
+MAIN CONTAINER
+========================= */
+
 .register-container {
   width: 100%;
   max-width: 1200px;
   background: #fff;
-  border-radius: 30px;
+  border-radius: 25px;
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -59,30 +64,24 @@ LEFT SIDE
 
 .logo-area img {
   width: 50px;
+  border-radius: 8px;
 }
 
 .logo-area h1 {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 800;
 }
 
 .register-left h2 {
-  font-size: 48px;
+  font-size: 44px;
   line-height: 1.2;
   margin-bottom: 20px;
 }
 
 .register-left p {
-  font-size: 18px;
-  line-height: 1.8;
+  font-size: 17px;
+  line-height: 1.7;
   opacity: 0.9;
-  margin-bottom: 40px;
-}
-
-.side-image {
-  width: 100%;
-  max-width: 400px;
-  margin-top: 20px;
 }
 
 /* =========================
@@ -98,39 +97,55 @@ RIGHT SIDE
 
 form {
   width: 100%;
+  max-width: 420px;
 }
 
 form h2 {
-  font-size: 40px;
-  margin-bottom: 30px;
+  font-size: 34px;
+  margin-bottom: 25px;
   color: #1f2937;
+  text-align: center;
 }
 
-/* INPUTS */
+/* =========================
+INPUTS
+========================= */
 
 .input-group {
-  margin-bottom: 22px;
+  margin-bottom: 18px;
 }
 
 .input-group label {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   font-weight: 600;
   color: #374151;
 }
 
 .input-group input {
   width: 100%;
-  padding: 16px;
+  padding: 14px;
   border: 1px solid #d1d5db;
-  border-radius: 12px;
-  font-size: 16px;
+  border-radius: 10px;
+  font-size: 15px;
   outline: none;
   transition: 0.3s ease;
 }
 
 .input-group input:focus {
   border-color: #028a07;
+  box-shadow: 0 0 0 3px rgba(2, 138, 7, 0.1);
+}
+
+/* =========================
+ERROR TEXT
+========================= */
+
+#passwordError {
+  color: red;
+  font-size: 13px;
+  margin-top: 5px;
+  display: block;
 }
 
 /* =========================
@@ -141,8 +156,7 @@ DIVIDER
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 28px 0;
-  position: relative;
+  margin: 20px 0;
 }
 
 .divider::before,
@@ -154,162 +168,108 @@ DIVIDER
 }
 
 .divider span {
-  margin: 0 16px;
+  margin: 0 12px;
+  font-size: 13px;
   color: #6b7280;
-  font-size: 14px;
-  font-weight: 500;
 }
 
 /* =========================
 GOOGLE BUTTON
 ========================= */
 
-.google-btn {
+#google-signin-button {
+  margin-bottom: 15px;
+}
+
+/* =========================
+BUTTON
+========================= */
+
+.signin-btn {
   width: 100%;
-  padding: 16px;
-  border: 1px solid #d1d5db;
-  border-radius: 14px;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #028a07;
+  color: #fff;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s ease;
 }
 
-.google-btn:hover {
-  background: #f9fafb;
-}
-
-.google-btn img {
-  width: 22px;
-  height: 22px;
-}
-/* BUTTON */
-
-.signin-btn {
-  width: 100%;
-  padding: 18px;
-  border: none;
-  border-radius: 12px;
-  background: #028a07;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s ease;
-  margin-top: 10px;
-}
-
 .signin-btn:hover {
   background: #026805;
 }
 
-/* LOGIN TEXT */
+/* =========================
+LOGIN TEXT
+========================= */
 
 .login-text {
-  margin-top: 24px;
+  margin-top: 18px;
   text-align: center;
+  font-size: 14px;
   color: #6b7280;
 }
 
 .login-text a {
   color: #028a07;
-  text-decoration: none;
   font-weight: 600;
+  text-decoration: none;
 }
 
 /* =========================
 RESPONSIVE
 ========================= */
 
+/* TABLET */
 @media (max-width: 900px) {
   .register-container {
     grid-template-columns: 1fr;
-    max-width: 700px;
   }
 
   .register-left {
     text-align: center;
-    align-items: center;
     padding: 50px 30px;
   }
 
-  .logo-area {
-    justify-content: center;
+  .register-right {
+    padding: 40px 30px;
   }
 
-  .side-image {
-    max-width: 300px;
+  form {
+    max-width: 100%;
   }
 }
 
+/* MOBILE */
 @media (max-width: 600px) {
   .register-section {
-    padding: 20px 12px;
+    padding: 20px 10px;
   }
 
-  .register-container {
-    border-radius: 20px;
-  }
-
-  .register-left,
-  .register-right {
-    padding: 35px 20px;
+  .register-left {
+    padding: 40px 20px;
   }
 
   .register-left h2 {
     font-size: 32px;
   }
 
-  .register-left p {
-    font-size: 16px;
-    line-height: 1.6;
+  .register-right {
+    padding: 30px 20px;
   }
 
   form h2 {
-    font-size: 28px;
-    text-align: center;
-  }
-
-  .input-group input {
-    padding: 14px;
-    font-size: 15px;
-  }
-
-  .signin-btn,
-  .google-btn {
-    padding: 15px;
-    font-size: 16px;
-  }
-
-  .logo-area h1 {
     font-size: 26px;
   }
 
-  .side-image {
-    max-width: 220px;
-  }
-}
-
-@media (max-width: 400px) {
-  .register-left,
-  .register-right {
-    padding: 25px 15px;
+  .input-group input {
+    padding: 12px;
   }
 
-  .register-left h2 {
-    font-size: 28px;
-  }
-
-  form h2 {
-    font-size: 24px;
-  }
-
-  .logo-area h1 {
-    font-size: 22px;
+  .signin-btn {
+    padding: 14px;
   }
 }
