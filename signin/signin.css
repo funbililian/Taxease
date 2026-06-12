@@ -30,7 +30,7 @@ REGISTER SECTION
   width: 100%;
   max-width: 1200px;
   background: #fff;
-  border-radius: 25px;
+  border-radius: 30px;
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr;
