@@ -13,7 +13,6 @@ const businessSection = document.getElementById("businessSection");
 const batchPayrollBtn = document.getElementById("batchPayrollBtn");
 const calculateBtn = document.getElementById("calculateBtn");
 const saveBtn = document.getElementById("saveBtn");
-const makePaymentBtn = document.getElementById("makePaymentBtn");
 
 let pieChart;
 let barChart;
