@@ -5,9 +5,9 @@ const passwordInput = document.getElementById("password");
 const confirmPasswordInput = document.getElementById("confirmPassword");
 const passwordError = document.getElementById("passwordError");
 
-// =======================
-// PASSWORD VALIDATION
-// =======================
+/* =======================
+PASSWORD VALIDATION
+======================= */
 
 function validatePasswords() {
   if (!passwordError) return;
@@ -29,9 +29,9 @@ function validatePasswords() {
 passwordInput.addEventListener("input", validatePasswords);
 confirmPasswordInput.addEventListener("input", validatePasswords);
 
-// =======================
-// REGISTER FORM SUBMIT
-// =======================
+/* =======================
+REGISTER SUBMIT
+======================= */
 
 registerForm.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -46,7 +46,7 @@ registerForm.addEventListener("submit", async (event) => {
   const password = passwordInput.value;
   const confirmPassword = confirmPasswordInput.value;
 
-  // Empty field validation
+  // Empty check
   if (!fullName || !email || !phone || !password || !confirmPassword) {
     alert("Please fill in all fields.");
     resetButton();
@@ -54,7 +54,7 @@ registerForm.addEventListener("submit", async (event) => {
   }
 
   // Email validation
-  const emailPattern = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (!emailPattern.test(email)) {
     alert("Please enter a valid email address.");
@@ -62,19 +62,19 @@ registerForm.addEventListener("submit", async (event) => {
     return;
   }
 
-  // Password validation
+  // Password strength validation
   const passwordPattern =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
 
   if (!passwordPattern.test(password)) {
     alert(
-      "Password must contain at least 8 characters, one uppercase letter, one lowercase letter, one number and one special character.",
+      "Password must contain 8+ characters, uppercase, lowercase, number, and special character."
     );
     resetButton();
     return;
   }
 
-  // Confirm password validation
+  // Confirm password check
   if (password !== confirmPassword) {
     alert("Passwords do not match.");
     resetButton();
@@ -96,28 +96,28 @@ registerForm.addEventListener("submit", async (event) => {
           phone,
           password,
         }),
-      },
+      }
     );
 
     const data = await response.json();
 
-if (response.ok && data.success) {
-  alert("Account created successfully!");
+    if (response.ok && data.success) {
+      alert("Account created successfully!");
 
-  if (data.data) {
-    localStorage.setItem("user", JSON.stringify(data.data));
-  }
+      if (data.data) {
+        localStorage.setItem("currentUser", JSON.stringify(data.data));
+      }
 
-  registerForm.reset();
+      registerForm.reset();
 
-  if (passwordError) {
-    passwordError.textContent = "";
-  }
+      if (passwordError) {
+        passwordError.textContent = "";
+      }
 
-  window.location.href = "/login/index.html";
-} else {
-  alert(data.message || "Registration failed.");
-}
+      window.location.href = "../profile/index.html";
+    } else {
+      alert(data.message || "Registration failed.");
+    }
   } catch (error) {
     console.error("Registration Error:", error);
     alert("Unable to connect to the server. Please try again later.");
@@ -126,18 +126,18 @@ if (response.ok && data.success) {
   }
 });
 
-// =======================
-// BUTTON RESET
-// =======================
+/* =======================
+RESET BUTTON
+======================= */
 
 function resetButton() {
   createAccountBtn.disabled = false;
   createAccountBtn.textContent = "Create Account";
 }
 
-// =======================
-// GOOGLE SIGN IN
-// =======================
+/* =======================
+GOOGLE SIGN-IN
+======================= */
 
 window.addEventListener("load", () => {
   if (
@@ -162,9 +162,11 @@ window.addEventListener("load", () => {
   }
 });
 
-function handleGoogleResponse(response) {
-  console.log("Google Login Success:", response);
+/* =======================
+GOOGLE CALLBACK
+======================= */
 
+function handleGoogleResponse(response) {
   fetch("https://tax-system-backend.onrender.com/api/auth/google", {
     method: "POST",
     headers: {
@@ -178,8 +180,9 @@ function handleGoogleResponse(response) {
     .then((res) => res.json())
     .then((data) => {
       if (data.success) {
-        localStorage.setItem("user", JSON.stringify(data.data));
-        window.location.href = "/dashboard/index.html";
+        localStorage.setItem("currentUser", JSON.stringify(data.data));
+
+        window.location.href = "../profile/index.html";
       } else {
         alert(data.message || "Google login failed.");
       }
