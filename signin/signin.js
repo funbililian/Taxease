@@ -39,8 +39,8 @@ registerForm.addEventListener("submit", async (event) => {
   createAccountBtn.disabled = true;
   createAccountBtn.textContent = "Creating Account...";
 
-  const firstName = document.getElementById("first_name").value.trim();
-  const lastName = document.getElementById("last_name").value.trim();
+  const first_name = document.getElementById("first_name").value.trim();
+  const last_name = document.getElementById("last_name").value.trim();
   const email = document.getElementById("email").value.trim();
 
   const password = passwordInput.value;
