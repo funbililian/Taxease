@@ -61,7 +61,7 @@ function collectPayload() {
   let expenses = 0;
 
   if (profile !== "Business Owner") {
-    salary = getInput("grossIncome") * 12;
+    salary = getInput("grossMonthlyIncome") * 12;
   } else {
     revenue = getInput("annualRevenue");
     expenses = getInput("annualExpenses");
