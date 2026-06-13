@@ -137,7 +137,7 @@ function renderResults(result) {
     annualMortgageInterest;
 
   // MONTHLY
-  document.getElementById("monthlyGross").textContent = naira(
+  document.getElementById("grossMonthlyIncome").textContent = naira(
     annualIncome / 12,
   );
 
