@@ -1,5 +1,5 @@
 const API_BASE = "https://tax-system-backend.onrender.com/api";
-const paymentBtn = document.getElementById("paymentHistoryBtn");
+const calculatorBtn = document.getElementById("calculatorBtn");
 
 // =============================
 // STATE
@@ -183,6 +183,15 @@ function renderCharts() {
         }
     });
 }
+
+// =============================
+// CALCULATOR
+// =============================
+
+calculatorBtn.addEventListener("click", () => {
+  window.location.href = "../calculator/index.html";
+});
+
 
 // =============================
 // REPORT DOWNLOAD (API INTEGRATION)
