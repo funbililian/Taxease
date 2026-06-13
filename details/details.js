@@ -127,8 +127,8 @@ if (profileForm) {
 
       console.log("Profile Data:", profileData);
 
-      const response = await fetch(`${API_BASE}/auth/profile`, {
-        method: "PUT",
+      const response = await fetch(`${API_BASE}/auth/save_profile`, {
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
